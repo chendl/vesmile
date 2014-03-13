@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="vsf"
+  id="myeclipse.1394514017965"
+  context-root="/vsf"
+  j2ee-spec="6.0"
+  archive="vsf.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/web" />
+  </attributes>
+</project-module>
+

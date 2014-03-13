@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>合肥应急网</title>
+<link href="style/global.css" rel="stylesheet" type="text/css">
+<link href="style/style.css" rel="stylesheet" type="text/css">
+<script language="javascript">
+var baseurl='http://www.hfyj.gov.cn'
+
+function h(obj){obj.style.behavior='url(#default#homepage)';obj.setHomePage(baseurl)};
+
+function addFav(){
+	try{
+		window.external.addfavorite(baseurl,'合肥应急网');
+	}catch(e){
+		try{
+			window.sidebar.addPanel('合肥应急网',baseurl,'');
+		}catch(e){
+			alert('添加失败，请使用浏览器的添加收藏夹功能！');
+		}
+	}
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><span><a href="javascript:void(0);" onclick="h(this);">设为首页</a> | <a href="javascript:addFav();">加入收藏</a> | <a href="javascript:void(0);" onclick="window.open('showDocument.do?unitCode=18');">联系我们</a></span>欢迎来到合肥应急网!   今天是：<font id="today"></font></div>
+<div class="header"><img src="images/pic01.jpg" width="977" height="190" /></div>
+<div class="navBg">
+<table width="94%" border="0" cellspacing="0" cellpadding="0" class="navBg">
+  <tr>
+	<td align="center"><a href="javascript:void(0)" onclick="window.open(baseurl)">首　　页</a></td>
+    <td><img src="images/pic03.jpg" width="1" height="37" /></td>
+    <td align="center"><a href="javascript:void(0)" onclick="window.open('showList.do?unitCode=01')">组织机构</a></td>
+    <td><img src="images/pic03.jpg" width="1" height="37" /></td>
+    <td align="center"><a href="javascript:void(0)" onclick="window.open('showList.do?unitCode=02')">应急动态</a></td>
+    <td><img src="images/pic03.jpg" width="1" height="37" /></td>
+    <td align="center"><a href="javascript:void(0)" onclick="window.open('showList.do?unitCode=03')">应急预案</a></td>
+    <td><img src="images/pic03.jpg" width="1" height="37" /></td>
+    <td align="center"><a href="javascript:void(0)" onclick="window.open('showList.do?unitCode=04')">应急队伍</a></td>
+    <td><img src="images/pic03.jpg" width="1" height="37" /></td>
+    <td align="center"><a href="javascript:void(0)" onclick="window.open('showList.do?unitCode=05')">法律法规</a></td>
+    <td><img src="images/pic03.jpg" width="1" height="37" /></td>
+    <td align="center"><a href="javascript:void(0)" onclick="window.open('showList.do?unitCode=06')">理论研究</a></td>
+    <td><img src="images/pic03.jpg" width="1" height="37" /></td>
+    <td align="center"><a href="javascript:void(0)" onclick="window.open('showList.do?unitCode=13')">应急常识</a></td>
+  </tr>
+</table>
+</div>
+<div class="searchB">
+<table width="946" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+  	<td width="60" align="left">
+  		预警信息：
+  	</td>
+    <td width="620" align="left">
+    	<marquee direction="left" scrollamount="2" onmouseout="this.start();" onmouseover="this.stop();" behavior="scroll">1为提高市卫生应急志愿者的急救技能，打造卫生应急技术过硬的志愿者队伍，我市卫生局应急办...2为提高市卫生应急志愿者的急救技能，打造卫生应急技术过硬的志愿者队伍，我市卫生局应急办...</marquee>
+    </td>
+    <td width="200" align="left"><input id="stitle" name="stitle" type="text" value="" class="input1"/></td>
+    <td width="66" align="left"><a href="javascript:void(0)" onclick="window.open('showList.do?type=s&stitle='+document.getElementById('stitle').value);"><img src="images/pic02.jpg" width="66" height="21" border="0" /></a></td>
+  </tr>
+</table>
+</div>
+</div>
+
+<div class="wrap paddingTop10px">
+<div class="wrap2">
+
+
+
+
+
+
+<div class="map" style="float:left;">
+<div class="rightBg" style="padding-top:3px;">
+
+  <div class="rightTitle" style="margin-top:1px;">理论研究</div>
+<div class="rightBg2">
+
+<ul class="list02">
+<li><a href="#">滨城市照明系统突发事件应急</a></li>
+<li><a href="#">滨湖市照明系统突发事件应急</a></li>
+<li><a href="#">滨湖城照明系统突发事件应急</a></li>
+<li><a href="#">滨湖城照明系统突发事件应急</a></li>
+<li><a href="#">滨湖城照明系统突发事件应急</a></li>
+<li><a href="#">滨湖市照明系统突发事件应急</a></li>
+<li><a href="#">滨湖市照明系统突发事件应急</a></li>
+</ul>
+</div>
+
+  <div class="rightTitle" style="margin-top:1px;">理论研究</div>
+<div class="rightBg2" style="height:180px;">
+
+<table width="83%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="44"><a href="#"><img src="images/pic53.jpg" width="175" height="32" /></a></td>
+  </tr>
+  <tr>
+    <td height="44"><a href="#"><img src="images/pic54.jpg" width="175" height="32" /></a></td>
+  </tr>
+  <tr>
+    <td height="44"><a href="#"><img src="images/pic55.jpg" width="175" height="32" /></a></td>
+  </tr>
+  <tr>
+    <td height="44"><a href="#"><img src="images/pic56.jpg" width="175" height="32" /></a></td>
+  </tr>
+</table></div>
+
+
+<div><a href="#"><img src="images/pic23.jpg" width="220" height="76" /></a></div>
+<div class="paddingTop10px"><a href="#"><img src="images/pic24.jpg" width="220" height="76" /></a></div>
+<div class="paddingTop10px"><a href="#"><img src="images/pic25.jpg" width="220" height="76" /></a></div>
+
+  <div class="rightTitle" style="margin-top:10px;">经验交流</div>
+<div class="rightBg2" style="margin-bottom:5px;">
+
+<ul class="list02">
+<li><a href="#">滨城市照明系统突发事件应急</a></li>
+<li><a href="#">滨湖市照明系统突发事件应急</a></li>
+<li><a href="#">滨湖城照明系统突发事件应急</a></li>
+<li><a href="#">滨湖市照明系统突发事件应急</a></li>
+<li><a href="#">滨湖市照明系统突发事件应急</a></li>
+<li><a href="#">滨湖市照明系统突发事件应急</a></li>
+<li><a href="#">滨湖市照明系统突发事件应急</a></li>
+</ul>
+</div>
+
+<div class="clear"></div>
+</div>
+</div>
+<div class="homeLeft" style="float:right; margin-right:0px;">
+<div class="homeRpage" id='emp'>
+
+<div class="titleH1"><span id='path'></span><p id='unit'></p>
+</div>
+
+<ul class="list03" id='list'>
+<li><span>[2011-02-01]</span><a href="#">滨城市照明系统突发事突发事突发事突发事突发事突发件应急</a></li>
+</ul>
+
+<table width="600" border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td height="76" align="center" valign="middle"><span style="padding-top:15px;"  id="page">
+            </span></td>
+          </tr>
+        </table>
+</div>
+</div>
+<div class="clear"></div>
+
+
+
+</div>
+
+
+</div>
+
+<div class="wrap paddingTop10px">
+<div class="wrap2 fLink">
+<ul>
+<li><a href="#"><img src="images/pic41.jpg" width="160" height="48" /></a></li>
+<li><a href="#"><img src="images/pic41.jpg" width="160" height="48" /></a></li>
+<li><a href="#"><img src="images/pic41.jpg" width="160" height="48" /></a></li>
+<li><a href="#"><img src="images/pic41.jpg" width="160" height="48" /></a></li>
+<li><a href="#"><img src="images/pic41.jpg" width="160" height="48" /></a></li>
+<div class="clear"></div>
+</ul>
+</div>
+
+<div class="wrap2 footerNav">
+<a href="#">首 页</a>　|　<a href="#">组织机构</a>　|　<a href="#">应急动态</a>　|　<a href="#">应急预案</a>　|　<a href="#">应急队伍</a>　|　<a href="#">法律法规</a>　|　<a href="#">理论研究</a>　|　<a href="#">应急常识</a>
+</div>
+<div class="footer">
+主办：合肥市突发事件应急委员会  承办：合肥市突发事件应急委员会办公室  皖ICP备11016071号-1<br />
+本网站由合肥市突发事件应急委员会办公室版权所有，未经授权禁止复制或建立镜像  您是访问本站的0000603903位访者
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="vsf" default="build" basedir=".">
+	
+	<property file="build.properties" />
+	
+	<target name="build">
+		<antcall target="task.manifest" />
+		<antcall target="task.cleanDeploy" />
+		<antcall target="task.prepare" />
+		<antcall target="task.copyResource" />
+		<antcall target="task.compile" />
+		<antcall target="task.copyWeb" />
+		<antcall target="deploy.war" />
+		<antcall target="task.cleanClasses" />
+	</target>
+
+	<path id="compile.classpath">
+		<fileset dir="${lib}">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${lib.include}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+	
+	<target name="task.manifest">
+		<manifest file="${src.web}/META-INF/MANIFEST.MF">
+			<attribute name="App-Name" value="${app.name}" />
+			<attribute name="App-Version" value="${app.version}" />
+			<attribute name="Implementation-Title" value="${app.name}" />
+			<attribute name="Implementation-Version" value="${app.version}" />
+			<attribute name="Implementation-Vendor" value="${app.vender}" />
+		</manifest>
+	</target>
+	
+	<target name="task.cleanDeploy">
+		<delete dir="${deploy}" />
+	</target>
+
+	<target name="task.prepare">
+		<mkdir dir="${deploy}" />
+		<mkdir dir="${deploy.classes}" />
+	</target>
+
+	<target name="task.copyResource">
+		<copy todir="${deploy.classes}" overwrite="true">
+			<fileset dir="${src.resource}">
+				<include name="**/*.*" />
+				<exclude name="**/*.mex" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="task.compile">
+		<javac srcdir="${src.java}" destdir="${deploy.classes}">
+			<classpath refid="compile.classpath" />
+		</javac>
+	</target>
+
+	<target name="task.copyWeb">
+		<copy todir="${deploy.web}">
+			<fileset dir="${src.web}">
+				<include name="**" />
+				<include name="**/*.*" />
+				<exclude name="**/*.bak" />
+				<exclude name="**/*.*~*" />
+				<exclude name="/WEB-INF/classes/**/*.*" />
+				<exclude name="**/*.mex" />
+			</fileset>
+		</copy>
+		<mkdir dir="${deploy.web}/WEB-INF/lib" />
+		<copy todir="${deploy.web}/WEB-INF/lib">
+			<fileset dir="${lib}">
+				<include name="**/*.*" />
+			</fileset>
+		</copy>
+		<mkdir dir="${deploy.web}/WEB-INF/classes" />
+		<copy todir="${deploy.web}/WEB-INF/classes">
+			<fileset dir="${deploy.classes}">
+				<include name="**/*.*" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="deploy.war">
+		<delete file="${deploy.war}" failonerror="true" />
+		<war destfile="${deploy.war}" webxml="${deploy.web}/WEB-INF/web.xml">
+			<fileset dir="${deploy.web}">
+				<exclude name="**/*.bak" />
+				<exclude name="**/*.*~*" />
+			</fileset>
+			<manifest>
+				<attribute name="App-Name" value="${app.name}" />
+				<attribute name="App-Version" value="${app.version}" />
+				<attribute name="Implementation-Title" value="${app.name}" />
+				<attribute name="Implementation-Version" value="${app.version}" />
+				<attribute name="Implementation-Vendor" value="${app.vender}" />
+			</manifest>
+		</war>
+	</target>
+
+	<target name="task.cleanClasses">
+		<delete dir="${deploy.classes}" />
+	</target>
+	
+</project>

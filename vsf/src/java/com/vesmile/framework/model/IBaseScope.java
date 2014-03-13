@@ -1,0 +1,1 @@
+package com.vesmile.framework.model;import java.util.List;public interface IBaseScope<T> {	public Class<T> getClazz();	public String getWhereCondition(String string);	public String getOrderHql(String string);	public List getParameter();}

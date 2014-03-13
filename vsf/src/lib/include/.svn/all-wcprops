@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/emcgate/!svn/ver/27/trunk/emcgate/src/lib/include
+END
+javax.servlet.jsp.jar
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/emcgate/!svn/ver/27/trunk/emcgate/src/lib/include/javax.servlet.jsp.jar
+END
+junit.jar
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/emcgate/!svn/ver/27/trunk/emcgate/src/lib/include/junit.jar
+END
+javax.servlet.jar
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/emcgate/!svn/ver/27/trunk/emcgate/src/lib/include/javax.servlet.jar
+END
