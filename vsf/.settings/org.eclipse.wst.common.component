@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project-modules id="moduleCoreId" project-version="1.5.0">
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
     <wb-module deploy-name="vsf">
-        <wb-resource deploy-path="/" source-path="/src/web"/>
+        <wb-resource deploy-path="/" source-path="/src/web" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/resource"/>
         <property name="context-root" value="/vsf"/>
         <property name="java-output-path" value="/vsf/src/web/WEB-INF/classes"/>
+        <property name="me-merge-utility-modules" value="true"/>
     </wb-module>
 </project-modules>

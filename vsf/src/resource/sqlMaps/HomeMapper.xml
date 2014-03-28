@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.vesmile.webappla.dao.mybatis.client.HomeMapper" >
+  <resultMap id="BaseResultMap" type="com.vesmile.webappla.model.Home" >
+    <id column="lah_id" property="id" jdbcType="INTEGER" />
+    <result column="lah_title" property="title" jdbcType="VARCHAR" />
+    <result column="lah_type" property="type" jdbcType="VARCHAR" />
+    <result column="lap_id" property="lapId" jdbcType="INTEGER" />
+    <result column="lap_name" property="lapName" jdbcType="VARCHAR" />
+    <result column="lah_x" property="x" jdbcType="VARCHAR" />
+    <result column="lah_y" property="y" jdbcType="VARCHAR" />
+    <result column="lah_area" property="area" jdbcType="INTEGER" />
+    <result column="lah_harea" property="harea" jdbcType="DECIMAL" />
+    <result column="lah_build_area" property="buildArea" jdbcType="DECIMAL" />
+    <result column="lah_isRent" property="isrent" jdbcType="INTEGER" />
+    <result column="lah_isSals" property="issals" jdbcType="INTEGER" />
+    <result column="lah_rent_price" property="rentPrice" jdbcType="DECIMAL" />
+    <result column="lah_sale_price" property="salePrice" jdbcType="DECIMAL" />
+    <result column="lah_contect" property="contect" jdbcType="VARCHAR" />
+    <result column="lah_contect_sex" property="contectSex" jdbcType="INTEGER" />
+    <result column="lah_contect_tel1" property="contectTel1" jdbcType="VARCHAR" />
+    <result column="lah_contect_tel2" property="contectTel2" jdbcType="VARCHAR" />
+    <result column="lah_contect_address" property="contectAddress" jdbcType="VARCHAR" />
+    <result column="lah_Room_type" property="roomType" jdbcType="VARCHAR" />
+    <result column="lah_building_no" property="buildingNo" jdbcType="VARCHAR" />
+    <result column="lah_unit" property="unit" jdbcType="VARCHAR" />
+    <result column="lah_floor" property="floor" jdbcType="VARCHAR" />
+    <result column="lah_no" property="no" jdbcType="VARCHAR" />
+    <result column="lah_year" property="year" jdbcType="VARCHAR" />
+    <result column="lah_building_type" property="buildingType" jdbcType="VARCHAR" />
+    <result column="lah_room_face" property="roomFace" jdbcType="VARCHAR" />
+    <result column="lah_prop_comp" property="propComp" jdbcType="VARCHAR" />
+    <result column="lah_memo" property="memo" jdbcType="VARCHAR" />
+    <result column="lah_address" property="address" jdbcType="VARCHAR" />
+    <result column="lah_status" property="status" jdbcType="INTEGER" />
+    <result column="lah_rentdate" property="rentdate" jdbcType="DATE" />
+    <result column="lah_pubtime" property="pubtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    lah_id, lah_title, lah_type, lap_id, lap_name, lah_x, lah_y, lah_area, lah_harea, 
+    lah_build_area, lah_isRent, lah_isSals, lah_rent_price, lah_sale_price, lah_contect, 
+    lah_contect_sex, lah_contect_tel1, lah_contect_tel2, lah_contect_address, lah_Room_type, 
+    lah_building_no, lah_unit, lah_floor, lah_no, lah_year, lah_building_type, lah_room_face, 
+    lah_prop_comp, lah_memo, lah_address, lah_status, lah_rentdate, lah_pubtime
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.vesmile.webappla.model.HomeExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from LA_Home
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from LA_Home
+    where lah_id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from LA_Home
+    where lah_id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.vesmile.webappla.model.HomeExample" >
+    delete from LA_Home
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.vesmile.webappla.model.Home" >
+    insert into LA_Home (lah_id, lah_title, lah_type, 
+      lap_id, lap_name, lah_x, 
+      lah_y, lah_area, lah_harea, lah_build_area, 
+      lah_isRent, lah_isSals, lah_rent_price, 
+      lah_sale_price, lah_contect, lah_contect_sex, 
+      lah_contect_tel1, lah_contect_tel2, lah_contect_address, 
+      lah_Room_type, lah_building_no, lah_unit, 
+      lah_floor, lah_no, lah_year, lah_building_type, 
+      lah_room_face, lah_prop_comp, lah_memo, 
+      lah_address, lah_status, lah_rentdate, 
+      lah_pubtime)
+    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, 
+      #{lapId,jdbcType=INTEGER}, #{lapName,jdbcType=VARCHAR}, #{x,jdbcType=VARCHAR}, 
+      #{y,jdbcType=VARCHAR}, #{area,jdbcType=INTEGER}, #{harea,jdbcType=DECIMAL}, #{buildArea,jdbcType=DECIMAL}, 
+      #{isrent,jdbcType=INTEGER}, #{issals,jdbcType=INTEGER}, #{rentPrice,jdbcType=DECIMAL}, 
+      #{salePrice,jdbcType=DECIMAL}, #{contect,jdbcType=VARCHAR}, #{contectSex,jdbcType=INTEGER}, 
+      #{contectTel1,jdbcType=VARCHAR}, #{contectTel2,jdbcType=VARCHAR}, #{contectAddress,jdbcType=VARCHAR}, 
+      #{roomType,jdbcType=VARCHAR}, #{buildingNo,jdbcType=VARCHAR}, #{unit,jdbcType=VARCHAR}, 
+      #{floor,jdbcType=VARCHAR}, #{no,jdbcType=VARCHAR}, #{year,jdbcType=VARCHAR}, #{buildingType,jdbcType=VARCHAR}, 
+      #{roomFace,jdbcType=VARCHAR}, #{propComp,jdbcType=VARCHAR}, #{memo,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{rentdate,jdbcType=DATE}, 
+      #{pubtime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.vesmile.webappla.model.Home" >
+    insert into LA_Home
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        lah_id,
+      </if>
+      <if test="title != null" >
+        lah_title,
+      </if>
+      <if test="type != null" >
+        lah_type,
+      </if>
+      <if test="lapId != null" >
+        lap_id,
+      </if>
+      <if test="lapName != null" >
+        lap_name,
+      </if>
+      <if test="x != null" >
+        lah_x,
+      </if>
+      <if test="y != null" >
+        lah_y,
+      </if>
+      <if test="area != null" >
+        lah_area,
+      </if>
+      <if test="harea != null" >
+        lah_harea,
+      </if>
+      <if test="buildArea != null" >
+        lah_build_area,
+      </if>
+      <if test="isrent != null" >
+        lah_isRent,
+      </if>
+      <if test="issals != null" >
+        lah_isSals,
+      </if>
+      <if test="rentPrice != null" >
+        lah_rent_price,
+      </if>
+      <if test="salePrice != null" >
+        lah_sale_price,
+      </if>
+      <if test="contect != null" >
+        lah_contect,
+      </if>
+      <if test="contectSex != null" >
+        lah_contect_sex,
+      </if>
+      <if test="contectTel1 != null" >
+        lah_contect_tel1,
+      </if>
+      <if test="contectTel2 != null" >
+        lah_contect_tel2,
+      </if>
+      <if test="contectAddress != null" >
+        lah_contect_address,
+      </if>
+      <if test="roomType != null" >
+        lah_Room_type,
+      </if>
+      <if test="buildingNo != null" >
+        lah_building_no,
+      </if>
+      <if test="unit != null" >
+        lah_unit,
+      </if>
+      <if test="floor != null" >
+        lah_floor,
+      </if>
+      <if test="no != null" >
+        lah_no,
+      </if>
+      <if test="year != null" >
+        lah_year,
+      </if>
+      <if test="buildingType != null" >
+        lah_building_type,
+      </if>
+      <if test="roomFace != null" >
+        lah_room_face,
+      </if>
+      <if test="propComp != null" >
+        lah_prop_comp,
+      </if>
+      <if test="memo != null" >
+        lah_memo,
+      </if>
+      <if test="address != null" >
+        lah_address,
+      </if>
+      <if test="status != null" >
+        lah_status,
+      </if>
+      <if test="rentdate != null" >
+        lah_rentdate,
+      </if>
+      <if test="pubtime != null" >
+        lah_pubtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="lapId != null" >
+        #{lapId,jdbcType=INTEGER},
+      </if>
+      <if test="lapName != null" >
+        #{lapName,jdbcType=VARCHAR},
+      </if>
+      <if test="x != null" >
+        #{x,jdbcType=VARCHAR},
+      </if>
+      <if test="y != null" >
+        #{y,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null" >
+        #{area,jdbcType=INTEGER},
+      </if>
+      <if test="harea != null" >
+        #{harea,jdbcType=DECIMAL},
+      </if>
+      <if test="buildArea != null" >
+        #{buildArea,jdbcType=DECIMAL},
+      </if>
+      <if test="isrent != null" >
+        #{isrent,jdbcType=INTEGER},
+      </if>
+      <if test="issals != null" >
+        #{issals,jdbcType=INTEGER},
+      </if>
+      <if test="rentPrice != null" >
+        #{rentPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="salePrice != null" >
+        #{salePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="contect != null" >
+        #{contect,jdbcType=VARCHAR},
+      </if>
+      <if test="contectSex != null" >
+        #{contectSex,jdbcType=INTEGER},
+      </if>
+      <if test="contectTel1 != null" >
+        #{contectTel1,jdbcType=VARCHAR},
+      </if>
+      <if test="contectTel2 != null" >
+        #{contectTel2,jdbcType=VARCHAR},
+      </if>
+      <if test="contectAddress != null" >
+        #{contectAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="roomType != null" >
+        #{roomType,jdbcType=VARCHAR},
+      </if>
+      <if test="buildingNo != null" >
+        #{buildingNo,jdbcType=VARCHAR},
+      </if>
+      <if test="unit != null" >
+        #{unit,jdbcType=VARCHAR},
+      </if>
+      <if test="floor != null" >
+        #{floor,jdbcType=VARCHAR},
+      </if>
+      <if test="no != null" >
+        #{no,jdbcType=VARCHAR},
+      </if>
+      <if test="year != null" >
+        #{year,jdbcType=VARCHAR},
+      </if>
+      <if test="buildingType != null" >
+        #{buildingType,jdbcType=VARCHAR},
+      </if>
+      <if test="roomFace != null" >
+        #{roomFace,jdbcType=VARCHAR},
+      </if>
+      <if test="propComp != null" >
+        #{propComp,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null" >
+        #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="rentdate != null" >
+        #{rentdate,jdbcType=DATE},
+      </if>
+      <if test="pubtime != null" >
+        #{pubtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.vesmile.webappla.model.HomeExample" resultType="java.lang.Integer" >
+    select count(*) from LA_Home
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update LA_Home
+    <set >
+      <if test="record.id != null" >
+        lah_id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.title != null" >
+        lah_title = #{record.title,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null" >
+        lah_type = #{record.type,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lapId != null" >
+        lap_id = #{record.lapId,jdbcType=INTEGER},
+      </if>
+      <if test="record.lapName != null" >
+        lap_name = #{record.lapName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.x != null" >
+        lah_x = #{record.x,jdbcType=VARCHAR},
+      </if>
+      <if test="record.y != null" >
+        lah_y = #{record.y,jdbcType=VARCHAR},
+      </if>
+      <if test="record.area != null" >
+        lah_area = #{record.area,jdbcType=INTEGER},
+      </if>
+      <if test="record.harea != null" >
+        lah_harea = #{record.harea,jdbcType=DECIMAL},
+      </if>
+      <if test="record.buildArea != null" >
+        lah_build_area = #{record.buildArea,jdbcType=DECIMAL},
+      </if>
+      <if test="record.isrent != null" >
+        lah_isRent = #{record.isrent,jdbcType=INTEGER},
+      </if>
+      <if test="record.issals != null" >
+        lah_isSals = #{record.issals,jdbcType=INTEGER},
+      </if>
+      <if test="record.rentPrice != null" >
+        lah_rent_price = #{record.rentPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.salePrice != null" >
+        lah_sale_price = #{record.salePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.contect != null" >
+        lah_contect = #{record.contect,jdbcType=VARCHAR},
+      </if>
+      <if test="record.contectSex != null" >
+        lah_contect_sex = #{record.contectSex,jdbcType=INTEGER},
+      </if>
+      <if test="record.contectTel1 != null" >
+        lah_contect_tel1 = #{record.contectTel1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.contectTel2 != null" >
+        lah_contect_tel2 = #{record.contectTel2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.contectAddress != null" >
+        lah_contect_address = #{record.contectAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.roomType != null" >
+        lah_Room_type = #{record.roomType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.buildingNo != null" >
+        lah_building_no = #{record.buildingNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.unit != null" >
+        lah_unit = #{record.unit,jdbcType=VARCHAR},
+      </if>
+      <if test="record.floor != null" >
+        lah_floor = #{record.floor,jdbcType=VARCHAR},
+      </if>
+      <if test="record.no != null" >
+        lah_no = #{record.no,jdbcType=VARCHAR},
+      </if>
+      <if test="record.year != null" >
+        lah_year = #{record.year,jdbcType=VARCHAR},
+      </if>
+      <if test="record.buildingType != null" >
+        lah_building_type = #{record.buildingType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.roomFace != null" >
+        lah_room_face = #{record.roomFace,jdbcType=VARCHAR},
+      </if>
+      <if test="record.propComp != null" >
+        lah_prop_comp = #{record.propComp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.memo != null" >
+        lah_memo = #{record.memo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.address != null" >
+        lah_address = #{record.address,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        lah_status = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.rentdate != null" >
+        lah_rentdate = #{record.rentdate,jdbcType=DATE},
+      </if>
+      <if test="record.pubtime != null" >
+        lah_pubtime = #{record.pubtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update LA_Home
+    set lah_id = #{record.id,jdbcType=INTEGER},
+      lah_title = #{record.title,jdbcType=VARCHAR},
+      lah_type = #{record.type,jdbcType=VARCHAR},
+      lap_id = #{record.lapId,jdbcType=INTEGER},
+      lap_name = #{record.lapName,jdbcType=VARCHAR},
+      lah_x = #{record.x,jdbcType=VARCHAR},
+      lah_y = #{record.y,jdbcType=VARCHAR},
+      lah_area = #{record.area,jdbcType=INTEGER},
+      lah_harea = #{record.harea,jdbcType=DECIMAL},
+      lah_build_area = #{record.buildArea,jdbcType=DECIMAL},
+      lah_isRent = #{record.isrent,jdbcType=INTEGER},
+      lah_isSals = #{record.issals,jdbcType=INTEGER},
+      lah_rent_price = #{record.rentPrice,jdbcType=DECIMAL},
+      lah_sale_price = #{record.salePrice,jdbcType=DECIMAL},
+      lah_contect = #{record.contect,jdbcType=VARCHAR},
+      lah_contect_sex = #{record.contectSex,jdbcType=INTEGER},
+      lah_contect_tel1 = #{record.contectTel1,jdbcType=VARCHAR},
+      lah_contect_tel2 = #{record.contectTel2,jdbcType=VARCHAR},
+      lah_contect_address = #{record.contectAddress,jdbcType=VARCHAR},
+      lah_Room_type = #{record.roomType,jdbcType=VARCHAR},
+      lah_building_no = #{record.buildingNo,jdbcType=VARCHAR},
+      lah_unit = #{record.unit,jdbcType=VARCHAR},
+      lah_floor = #{record.floor,jdbcType=VARCHAR},
+      lah_no = #{record.no,jdbcType=VARCHAR},
+      lah_year = #{record.year,jdbcType=VARCHAR},
+      lah_building_type = #{record.buildingType,jdbcType=VARCHAR},
+      lah_room_face = #{record.roomFace,jdbcType=VARCHAR},
+      lah_prop_comp = #{record.propComp,jdbcType=VARCHAR},
+      lah_memo = #{record.memo,jdbcType=VARCHAR},
+      lah_address = #{record.address,jdbcType=VARCHAR},
+      lah_status = #{record.status,jdbcType=INTEGER},
+      lah_rentdate = #{record.rentdate,jdbcType=DATE},
+      lah_pubtime = #{record.pubtime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.vesmile.webappla.model.Home" >
+    update LA_Home
+    <set >
+      <if test="title != null" >
+        lah_title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        lah_type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="lapId != null" >
+        lap_id = #{lapId,jdbcType=INTEGER},
+      </if>
+      <if test="lapName != null" >
+        lap_name = #{lapName,jdbcType=VARCHAR},
+      </if>
+      <if test="x != null" >
+        lah_x = #{x,jdbcType=VARCHAR},
+      </if>
+      <if test="y != null" >
+        lah_y = #{y,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null" >
+        lah_area = #{area,jdbcType=INTEGER},
+      </if>
+      <if test="harea != null" >
+        lah_harea = #{harea,jdbcType=DECIMAL},
+      </if>
+      <if test="buildArea != null" >
+        lah_build_area = #{buildArea,jdbcType=DECIMAL},
+      </if>
+      <if test="isrent != null" >
+        lah_isRent = #{isrent,jdbcType=INTEGER},
+      </if>
+      <if test="issals != null" >
+        lah_isSals = #{issals,jdbcType=INTEGER},
+      </if>
+      <if test="rentPrice != null" >
+        lah_rent_price = #{rentPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="salePrice != null" >
+        lah_sale_price = #{salePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="contect != null" >
+        lah_contect = #{contect,jdbcType=VARCHAR},
+      </if>
+      <if test="contectSex != null" >
+        lah_contect_sex = #{contectSex,jdbcType=INTEGER},
+      </if>
+      <if test="contectTel1 != null" >
+        lah_contect_tel1 = #{contectTel1,jdbcType=VARCHAR},
+      </if>
+      <if test="contectTel2 != null" >
+        lah_contect_tel2 = #{contectTel2,jdbcType=VARCHAR},
+      </if>
+      <if test="contectAddress != null" >
+        lah_contect_address = #{contectAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="roomType != null" >
+        lah_Room_type = #{roomType,jdbcType=VARCHAR},
+      </if>
+      <if test="buildingNo != null" >
+        lah_building_no = #{buildingNo,jdbcType=VARCHAR},
+      </if>
+      <if test="unit != null" >
+        lah_unit = #{unit,jdbcType=VARCHAR},
+      </if>
+      <if test="floor != null" >
+        lah_floor = #{floor,jdbcType=VARCHAR},
+      </if>
+      <if test="no != null" >
+        lah_no = #{no,jdbcType=VARCHAR},
+      </if>
+      <if test="year != null" >
+        lah_year = #{year,jdbcType=VARCHAR},
+      </if>
+      <if test="buildingType != null" >
+        lah_building_type = #{buildingType,jdbcType=VARCHAR},
+      </if>
+      <if test="roomFace != null" >
+        lah_room_face = #{roomFace,jdbcType=VARCHAR},
+      </if>
+      <if test="propComp != null" >
+        lah_prop_comp = #{propComp,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null" >
+        lah_memo = #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        lah_address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        lah_status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="rentdate != null" >
+        lah_rentdate = #{rentdate,jdbcType=DATE},
+      </if>
+      <if test="pubtime != null" >
+        lah_pubtime = #{pubtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where lah_id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.vesmile.webappla.model.Home" >
+    update LA_Home
+    set lah_title = #{title,jdbcType=VARCHAR},
+      lah_type = #{type,jdbcType=VARCHAR},
+      lap_id = #{lapId,jdbcType=INTEGER},
+      lap_name = #{lapName,jdbcType=VARCHAR},
+      lah_x = #{x,jdbcType=VARCHAR},
+      lah_y = #{y,jdbcType=VARCHAR},
+      lah_area = #{area,jdbcType=INTEGER},
+      lah_harea = #{harea,jdbcType=DECIMAL},
+      lah_build_area = #{buildArea,jdbcType=DECIMAL},
+      lah_isRent = #{isrent,jdbcType=INTEGER},
+      lah_isSals = #{issals,jdbcType=INTEGER},
+      lah_rent_price = #{rentPrice,jdbcType=DECIMAL},
+      lah_sale_price = #{salePrice,jdbcType=DECIMAL},
+      lah_contect = #{contect,jdbcType=VARCHAR},
+      lah_contect_sex = #{contectSex,jdbcType=INTEGER},
+      lah_contect_tel1 = #{contectTel1,jdbcType=VARCHAR},
+      lah_contect_tel2 = #{contectTel2,jdbcType=VARCHAR},
+      lah_contect_address = #{contectAddress,jdbcType=VARCHAR},
+      lah_Room_type = #{roomType,jdbcType=VARCHAR},
+      lah_building_no = #{buildingNo,jdbcType=VARCHAR},
+      lah_unit = #{unit,jdbcType=VARCHAR},
+      lah_floor = #{floor,jdbcType=VARCHAR},
+      lah_no = #{no,jdbcType=VARCHAR},
+      lah_year = #{year,jdbcType=VARCHAR},
+      lah_building_type = #{buildingType,jdbcType=VARCHAR},
+      lah_room_face = #{roomFace,jdbcType=VARCHAR},
+      lah_prop_comp = #{propComp,jdbcType=VARCHAR},
+      lah_memo = #{memo,jdbcType=VARCHAR},
+      lah_address = #{address,jdbcType=VARCHAR},
+      lah_status = #{status,jdbcType=INTEGER},
+      lah_rentdate = #{rentdate,jdbcType=DATE},
+      lah_pubtime = #{pubtime,jdbcType=TIMESTAMP}
+    where lah_id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
