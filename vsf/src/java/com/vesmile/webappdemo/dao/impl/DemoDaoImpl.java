@@ -17,7 +17,7 @@ import com.vesmile.webappdemo.dao.DemoDao;
 public class DemoDaoImpl extends BaseDao implements DemoDao {
 
 	public String showMsg() {
-		getlog().info("Show Demo Begin");
+		getlogger().info("Show Demo Begin");
 		String ibatisRs = "[IbatisResult-"
 				+ (String) getSqlMapTemplate().queryForObject("demo.showDemo")
 				+ "]</br>";
@@ -56,7 +56,7 @@ public class DemoDaoImpl extends BaseDao implements DemoDao {
 					}
 				}))
 				+ "]";
-		getlog().info("Show Demo End");
+		getlogger().info("Show Demo End");
 		return hibernateRs+ibatisRs+jdbcResult;
 	}
 	

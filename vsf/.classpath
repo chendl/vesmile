@@ -503,5 +503,6 @@
 	<classpathentry kind="lib" path="src/lib/include/javax.servlet.jar"/>
 	<classpathentry kind="lib" path="src/lib/include/javax.servlet.jsp.jar"/>
 	<classpathentry kind="lib" path="src/lib/include/junit.jar"/>
+	<classpathentry kind="lib" path="src/lib/main/mybatis-spring-1.2.2.jar"/>
 	<classpathentry kind="output" path="src/web/WEB-INF/classes"/>
 </classpath>
