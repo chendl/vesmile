@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.vesmile.webappla.dao.mybatis.client.PropertyParamMapper" >
+  <resultMap id="BaseResultMap" type="com.vesmile.webappla.model.PropertyParam" >
+    <id column="lapp_id" property="id" jdbcType="INTEGER" />
+    <result column="lap_id" property="lapId" jdbcType="INTEGER" />
+    <result column="lapp_type" property="type" jdbcType="VARCHAR" />
+    <result column="lapp_code" property="code" jdbcType="VARCHAR" />
+    <result column="lapp_value" property="value" jdbcType="VARCHAR" />
+    <result column="lapp_order" property="order" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    lapp_id, lap_id, lapp_type, lapp_code, lapp_value, lapp_order
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.vesmile.webappla.model.PropertyParamExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from LA_Property_Param
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from LA_Property_Param
+    where lapp_id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from LA_Property_Param
+    where lapp_id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.vesmile.webappla.model.PropertyParamExample" >
+    delete from LA_Property_Param
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.vesmile.webappla.model.PropertyParam" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into LA_Property_Param (lap_id, lapp_type, lapp_code, 
+      lapp_value, lapp_order)
+    values (#{lapId,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, 
+      #{value,jdbcType=VARCHAR}, #{order,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.vesmile.webappla.model.PropertyParam" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into LA_Property_Param
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="lapId != null" >
+        lap_id,
+      </if>
+      <if test="type != null" >
+        lapp_type,
+      </if>
+      <if test="code != null" >
+        lapp_code,
+      </if>
+      <if test="value != null" >
+        lapp_value,
+      </if>
+      <if test="order != null" >
+        lapp_order,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="lapId != null" >
+        #{lapId,jdbcType=INTEGER},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="value != null" >
+        #{value,jdbcType=VARCHAR},
+      </if>
+      <if test="order != null" >
+        #{order,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.vesmile.webappla.model.PropertyParamExample" resultType="java.lang.Integer" >
+    select count(*) from LA_Property_Param
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update LA_Property_Param
+    <set >
+      <if test="record.id != null" >
+        lapp_id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.lapId != null" >
+        lap_id = #{record.lapId,jdbcType=INTEGER},
+      </if>
+      <if test="record.type != null" >
+        lapp_type = #{record.type,jdbcType=VARCHAR},
+      </if>
+      <if test="record.code != null" >
+        lapp_code = #{record.code,jdbcType=VARCHAR},
+      </if>
+      <if test="record.value != null" >
+        lapp_value = #{record.value,jdbcType=VARCHAR},
+      </if>
+      <if test="record.order != null" >
+        lapp_order = #{record.order,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update LA_Property_Param
+    set lapp_id = #{record.id,jdbcType=INTEGER},
+      lap_id = #{record.lapId,jdbcType=INTEGER},
+      lapp_type = #{record.type,jdbcType=VARCHAR},
+      lapp_code = #{record.code,jdbcType=VARCHAR},
+      lapp_value = #{record.value,jdbcType=VARCHAR},
+      lapp_order = #{record.order,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.vesmile.webappla.model.PropertyParam" >
+    update LA_Property_Param
+    <set >
+      <if test="lapId != null" >
+        lap_id = #{lapId,jdbcType=INTEGER},
+      </if>
+      <if test="type != null" >
+        lapp_type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null" >
+        lapp_code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="value != null" >
+        lapp_value = #{value,jdbcType=VARCHAR},
+      </if>
+      <if test="order != null" >
+        lapp_order = #{order,jdbcType=INTEGER},
+      </if>
+    </set>
+    where lapp_id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.vesmile.webappla.model.PropertyParam" >
+    update LA_Property_Param
+    set lap_id = #{lapId,jdbcType=INTEGER},
+      lapp_type = #{type,jdbcType=VARCHAR},
+      lapp_code = #{code,jdbcType=VARCHAR},
+      lapp_value = #{value,jdbcType=VARCHAR},
+      lapp_order = #{order,jdbcType=INTEGER}
+    where lapp_id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

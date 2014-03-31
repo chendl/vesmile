@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.vesmile.webappla.dao.mybatis.client.LogMapper" >
+  <resultMap id="BaseResultMap" type="com.vesmile.webappla.model.Log" >
+    <id column="lal_id" property="id" jdbcType="INTEGER" />
+    <result column="lal_uid" property="uid" jdbcType="INTEGER" />
+    <result column="lal_uname" property="uname" jdbcType="VARCHAR" />
+    <result column="lal_opre" property="opre" jdbcType="VARCHAR" />
+    <result column="lal_memo" property="memo" jdbcType="VARCHAR" />
+    <result column="lal_opre_time" property="opreTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    lal_id, lal_uid, lal_uname, lal_opre, lal_memo, lal_opre_time
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.vesmile.webappla.model.LogExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from LA_Log
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from LA_Log
+    where lal_id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from LA_Log
+    where lal_id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.vesmile.webappla.model.LogExample" >
+    delete from LA_Log
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.vesmile.webappla.model.Log" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into LA_Log (lal_uid, lal_uname, lal_opre, 
+      lal_memo, lal_opre_time)
+    values (#{uid,jdbcType=INTEGER}, #{uname,jdbcType=VARCHAR}, #{opre,jdbcType=VARCHAR}, 
+      #{memo,jdbcType=VARCHAR}, #{opreTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.vesmile.webappla.model.Log" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into LA_Log
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="uid != null" >
+        lal_uid,
+      </if>
+      <if test="uname != null" >
+        lal_uname,
+      </if>
+      <if test="opre != null" >
+        lal_opre,
+      </if>
+      <if test="memo != null" >
+        lal_memo,
+      </if>
+      <if test="opreTime != null" >
+        lal_opre_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="uid != null" >
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="uname != null" >
+        #{uname,jdbcType=VARCHAR},
+      </if>
+      <if test="opre != null" >
+        #{opre,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null" >
+        #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="opreTime != null" >
+        #{opreTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.vesmile.webappla.model.LogExample" resultType="java.lang.Integer" >
+    select count(*) from LA_Log
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update LA_Log
+    <set >
+      <if test="record.id != null" >
+        lal_id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.uid != null" >
+        lal_uid = #{record.uid,jdbcType=INTEGER},
+      </if>
+      <if test="record.uname != null" >
+        lal_uname = #{record.uname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.opre != null" >
+        lal_opre = #{record.opre,jdbcType=VARCHAR},
+      </if>
+      <if test="record.memo != null" >
+        lal_memo = #{record.memo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.opreTime != null" >
+        lal_opre_time = #{record.opreTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update LA_Log
+    set lal_id = #{record.id,jdbcType=INTEGER},
+      lal_uid = #{record.uid,jdbcType=INTEGER},
+      lal_uname = #{record.uname,jdbcType=VARCHAR},
+      lal_opre = #{record.opre,jdbcType=VARCHAR},
+      lal_memo = #{record.memo,jdbcType=VARCHAR},
+      lal_opre_time = #{record.opreTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.vesmile.webappla.model.Log" >
+    update LA_Log
+    <set >
+      <if test="uid != null" >
+        lal_uid = #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="uname != null" >
+        lal_uname = #{uname,jdbcType=VARCHAR},
+      </if>
+      <if test="opre != null" >
+        lal_opre = #{opre,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null" >
+        lal_memo = #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="opreTime != null" >
+        lal_opre_time = #{opreTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where lal_id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.vesmile.webappla.model.Log" >
+    update LA_Log
+    set lal_uid = #{uid,jdbcType=INTEGER},
+      lal_uname = #{uname,jdbcType=VARCHAR},
+      lal_opre = #{opre,jdbcType=VARCHAR},
+      lal_memo = #{memo,jdbcType=VARCHAR},
+      lal_opre_time = #{opreTime,jdbcType=TIMESTAMP}
+    where lal_id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
