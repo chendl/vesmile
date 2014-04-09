@@ -1,0 +1,22 @@
+﻿@charset "utf-8";
+/* CSS Document */
+html,body,div,h1,h2,h3,h4,h5,h6,p,ul,ol,li,dl,dd,dt,menu,table,caption,colgroup,col,thead,tbody,tfoot,tr,th,td,menu,blockquote,hr,pre,q,address,iframe,map,area,b,i,del,ins,span,a,em,strong,form,legend,fieldset,input,button,label,select,optgroup,option,textarea,object,param,var,article,aside,audio,bdi,canvas,command,datalist,details,embed,fiqure,fiqcaption,header,footer,hgroup,keyqen,mark,meter,nav,output,progress,rp,rt,ruby,section,source,summary,time,track,video{margin:0;padding:0;background:transparent;outline:0;font-size:12px;font-family:SimSun;}
+html,body{height:100%;color:#333}
+ul,ol,li{list-style:none outside none}
+fieldset,em{border:0 none;font-style:normal}
+table{border-collapse:collapse}
+a img{border:0 none}
+a:link,a:hover,a:active,a:visited{text-decoration:none}
+/*a:hover{text-decoration:underline}*/
+a:focus{font-style:inherit}
+p:before,p:after{display:none;content:".";font-size:0}
+input[text],input[button],input[checkbox],input[password]{background:#fff}
+input[radio],input[checkbox],input[reset],input[submit]{border:0 none}
+.clear{clear:both;margin:0;padding:0;font-size:0;line-height:0;visibility:hidden} 
+.clearfix:after{content:".";clear:both;display:block;height:0;font-size:0}
+.cf:before,.cf:after{content:".";display:table}
+.cf:after{clear:both}
+.hide{overflow:hidden;position:absolute;top:0;left:0;width:0;height:0;font-size:0;visibility:hidden}
+.ac_results{padding:0;margin-top:-1px;border:1px solid #8ED59D;background-color:white;overflow:hidden;z-index:99999;}.ac_results ul{width:100%;list-style-position:outside;list-style:none;padding:0;margin:0;}.ac_results li{margin:0;padding:2px 5px;cursor:default;display:block;font:menu;font-size:12px;line-height:22px;overflow:hidden;}.ac_loading{background:white url('indicator.gif') right center no-repeat;}.ac_over{background-color:#c6edcb;color:#046929;}
+.sousuoa span{float:left;padding-right:10px;}
+.sousuoa label{float:right;}

@@ -1,0 +1,49 @@
+﻿@charset "utf-8";
+/***弹出层***/
+.pricebha{width:377px;border:5px solid #cbcbcb;background:#bbb;padding:1px;}
+.box{display:none;position:absolute;z-index:6}
+#mark{position:absolute;left:0;top:0;width:100%;filter:Alpha(Opacity=30);-moz-opacity:0.4;opacity:0.4;z-index:5;background:#000}
+/**24**/
+.tweing{width:248px;height:118px;border:1px solid #c5c5c5}
+.chfree{height:24px;background:#eee;border-bottom:1px solid #bfbfbf}
+.chfree ul li.one{float:left;color:#333;padding:5px 0 0 12px;font-weight:bold;font-size:14px;}
+.chfree ul li.two{display:inline;float:right;margin:5px 11px 0 0;}
+.hour_noly{padding-top:39px;text-align:center}
+.floatlayer{width:60px;height:auto;position:fixed;bottom:0;right:0;z-index:11;_position:absolute;_bottom:0;_top:auto;}
+/**Popup**/
+.alltcc{width:984px;height:512px;border:3px solid #969696;border-radius:5px;position:absolute;top:25%;left:50%;margin-left:-493px;background:#fff;z-index:99999;}
+.allt_l{position:relative;float:left;padding:31px 0 0 39px}
+.allt_l img{padding:1px;width:596px;height:446px;border:1px solid #bebebe}
+.allt_r{position:relative;float:left;width:285px;padding:28px 0 0 36px}
+.allt_r p{height:44px}
+.allt_r p a:link,.allt_r p a:visited{color:#0041d9;text-decoration:none;font:bold 14px/22px SimSun}
+.allt_r p a:hover{color:#f50;text-decoration:underline}
+.allt_r dl{width:285px;height:407px;overflow:auto;border:1px solid #bebebe;}
+.allt_r dl dd a:link img,.allt_r dl dd a:visited img{margin:12px 7px;float:left;width:73px;height:55px;border:1px solid #cac8c4}
+.allt_r dl dd a:hover img{border:1px solid #6fa738}
+.allt_r dl dd a:active img{border:1px solid #ff8830}
+.closeend{position:absolute;top:5px;right:10px;color:#888;cursor:pointer}
+.closeend span{float:left}
+.closeend i{float:left;display:inline-block;width:10px;height:10px;margin:3px 0 0 8px;background:url(../img/icon.png) no-repeat -62px -352px}
+.noneleft{display:block;position:absolute;left:41px;top:33px;width:298px;height:446px;background:url(../img/noneleft.gif) no-repeat 30px 186px;cursor:pointer}
+.noneright{display:block;position:absolute;left:338px;top:33px;width:298px;height:446px;background:url(../img/noneright.gif) no-repeat 233px 186px;cursor:pointer}
+.junfeng,.junfeng1,.junfeng3{position:absolute;top:-30px;left:0;width:10px;height:10px;top:-40px\9}
+.junfeng1{top:-12px;top:-25px\9}
+.junfeng3{top:-5px;top:-20px\9}
+body:nth-of-type(1) .junfeng{top:-40px}
+body:nth-of-type(1) .junfeng1{top:-20px}
+
+.acquiesce{color:red}
+button::-moz-focus-inner{ border:0; padding:0; margin:0; }
+.easyDialog_wrapper{ width:320px; color:#444; border:3px solid rgba(0,0,0,0); -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; -webkit-box-shadow:0 0 10px rgba(0,0,0,0.4); -moz-box-shadow:0 0 10px rgba(0,0,0,0.4); box-shadow:0 0 10px rgba(0,0,0,0.4); display:none; font-family:"Microsoft yahei", Arial; }
+.easyDialog_wrapper .easyDialog_content{ -webkit-border-radius:4px; -moz-border-radius:4px; border-radius:4px; background:#fff; border:1px solid #e5e5e5; }
+.easyDialog_wrapper .easyDialog_title{ height:30px; line-height:30px; overflow:hidden; color:#666; padding:0 10px; font-size:14px; border-bottom:1px solid #e5e5e5; background:#f7f7f7; border-radius:4px 4px 0 0; }
+.easyDialog_wrapper .close_btn{ font-family:arial; font-size:18px; _font-size:12px; font-weight:700; color:#999; text-decoration:none; float:right; }
+.easyDialog_wrapper .close_btn:hover{ color:#333; }
+.easyDialog_wrapper .easyDialog_text{ padding:25px 10px; font-size:13px; line-height:22px; }
+.easyDialog_wrapper .easyDialog_footer{ padding:0 10px; *zoom:1; }
+.easyDialog_wrapper .easyDialog_footer:after{ content:''; display:block; height:0; overflow:hidden; visibility:hidden; clear:both; }
+.easyDialog_wrapper .btn_highlight,
+.easyDialog_wrapper .btn_normal{ border:1px solid; border-radius:2px; cursor:pointer; font-family:"Microsoft yahei", Arial; float:right; font-size:12px; padding:0 12px; height:24px; line-height:24px; margin-bottom:10px; }
+.easyDialog_wrapper .btn_highlight{ background:#4787ed; background:-webkit-gradient(linear,center bottom,center top,from(#4787ed),to(#4d90fe)); background:-moz-linear-gradient(90deg, #4787ed, #4d90fe); border-color:#3079ed; color:#fff; }
+.easyDialog_wrapper .btn_normal{ margin-left:10px; border-color:#c3c3c3; background:#ececec; color:#333; background:-webkit-gradient(linear,center bottom,center top,from(#ececec),to(#f4f4f4)); background:-moz-linear-gradient(90deg,#ececec,#f4f4f4); }

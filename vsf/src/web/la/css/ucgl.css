@@ -1,0 +1,34 @@
+/* 全局CSS定义 */
+body{margin:0 auto;padding:0;background:#FFF;color:#666;font:12px '宋体';text-align:center;}
+body > div{margin-right:auto;margin-left:auto;text-align:center; } 
+div,form,ul,ol,li,span,p,dl,dt,dd,img{margin:0;padding:0;border:0;}
+h1,h2,h3,h4,h5,h6{margin:0;padding:0;font-size:12px;font-weight:normal;}
+ul,ol,li{list-style:none}
+table,td,input,textarea{font-size:12px}
+/* 链接颜色 */
+a{color:#333;text-decoration:none;}
+a:hover{color:#C00;text-decoration:underline;}
+a: active, a: focus {-moz-outline: none;outline: none;ie-dummy: expression(this.hideFocus=true);}
+/* 标题 */
+h2{text-align:right;}
+h2 span{float:left;font-weight: bold;}
+h2 span{font-size:14px;color:#333;}
+h2 span a{color:#0073C6;}
+h2 a{font-family:"SimSun";color:#666;}
+
+.clear,.area,.pt{zoom:1}
+.show{display:block;}
+.hidden{display:none;}
+.area {width: 1000px;}
+.area{margin:0 auto;}
+.pt:after,.area:after,.clear:after{content:".";display:block;visibility:hidden;height:0;clear:both;}
+
+.pt{color:#666;line-height:20px;text-align:left;}
+.pt div{float:left;margin:0 10px 0 0;}			/*图文混排*/
+.pt p{clear:none}
+
+/* 浮动属性 */
+.left,.center,.l,.right,.r{display:inline;float:left;}
+.right,.r{float:right;}
+
+

@@ -1,0 +1,28 @@
+h4 {font-weight: normal}
+.login_block .tab_top a {font-size: 18px;color: #333}
+.contain .main {position: relative;float: left;width: 1000px;height: 452px}
+.contain .main {padding-top: 30px;text-align: left}
+.contain .main .login_block {position: relative;background: #fff;border: 1px solid #ddd;width: 341px;float: right;overflow: hidden}
+.contain .main .login_block .tab_top ul {width: 350px;margin-left: -1px;text-align: center}
+.contain .main .login_block .tab_top li {float: left;border-top: 3px solid #f7f7f7;border-bottom: 1px solid #ddd}
+.contain .main .login_block .tab_top li a {background: #f7f7f7;display: block;float: left;width: 346px;height: 43px;line-height: 43px;
+border-right: 1px solid #f7f7f7;border-left: 1px solid #f7f7f7}
+.contain .main .login_block .tab_top li.cur {border-top: 3px solid #539bdd;background: #fff;border-bottom: 0}
+.contain .main .login_block .tab_top li.cur a {background: #fff;border-right: 1px solid #ddd;border-left: 1px solid #ddd}
+.contain .main .login_block .tab_bot li.tab_item {display: none}
+.form_block {float: left;font-size: 14px}
+.form_block .b1 {float: left;padding: 0px 20px 20px;*padding-bottom: 0}
+.form_block div {position: relative;float: left;width: 301px;padding-bottom: 30px;*margin-top: -2px}
+.form_block .uname input,.form_block .upass input {height: 41px;width: 251px;line-height: 41px\9;padding: 0;background: url(../img/uname.jpg) no-repeat left center;border: 1px solid #e4e4e4;padding-left: 51px;color: #333;font-size: 14px;vertical-align: middle}
+.form_block .uname label,.form_block .upass label {position: absolute;left: 0;top: 0;color: #e4e4e4;font-size: 14px;padding-left: 51px;line-height: 41px;_margin: 4px;cursor: text}
+.form_block .upass input {background: url(../img/upass.jpg) no-repeat left center;vertical-align: middle}
+.form_block .submit {position: relative;*width: 302px}
+.form_block .submit {margin-top: -10px;padding-bottom: 0}
+.form_block div.login_msg {font-size: 12px;float: left;width: auto;margin: 0;background: #eb8986;color: #fff;padding: 0 14px;height: 24px;
+	line-height: 24px}
+.form_block div.login_msg1 {font-size: 12px;float: left;width: auto;margin: 0;padding: 0 14px;height: 24px;line-height: 24px}
+.advert_bg {position: relative;margin-top: 17px;height: 1px;width: 100%;min-width: 1000px}
+.advert_contain {position: absolute;top: 0;left: 0;width: 100%;height: 460px;overflow: hidden}
+.advert_item {position: absolute;width: 10000px;height: 460px;top: 0;left: 0}
+.advert_item .img {cursor: pointer;background-image: url(../img/adv2.jpg); width: 1349px; height: 460px; background-position: 10% 0%; background-repeat: initial initial;}
+.advert_item li {float: left}

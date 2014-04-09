@@ -1,0 +1,20 @@
+/* headMenu*/
+.headMenu {position: relative;background: #f4f4f4;border-bottom: 1px solid #e9e9e9;z-index: 9998;}
+.headMenu .area {padding-top: 8px;background: #f4f4f4;}
+.logoBlock {float: left;}
+.logoBlock .logo {float: left;display: inline;width: 151px;height: 47px;*zoom: 1;}
+.logoBlock .logo img {display: block;width: 151px;height: 47px;}
+/* fouse_foot*/
+
+
+
+#fouse_foot {margin: 0 auto;padding: 5px 0;background: #313131;text-align: center;color: #ccc;font-size: 12px;min-width: 1000px}
+#fouse_foot p {line-height: 22px;padding: 0;margin: 0}
+#fouse_foot a {color: #ccc;text-decoration: none}
+#fouse_foot a: hover p {text-decoration: underline}
+
+
+
+
+
+
