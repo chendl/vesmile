@@ -1,8 +1,10 @@
 package com.vesmile.webappla.dao.mybatis.client;
 
+import com.vesmile.webappla.dao.mybatis.example.UserExample;
 import com.vesmile.webappla.model.User;
-import com.vesmile.webappla.model.UserExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface UserMapper {

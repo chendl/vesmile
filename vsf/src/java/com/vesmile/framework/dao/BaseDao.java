@@ -50,5 +50,9 @@ public class BaseDao {
 			logger = Logger.getLogger(getClass());
 		return logger;
 	}
+	
+	public <T> T getMapper(Class<T> type){
+		return getSqlSessionTemplate().getMapper(type);
+	}
 
 }

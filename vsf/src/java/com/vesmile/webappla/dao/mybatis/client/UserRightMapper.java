@@ -1,8 +1,10 @@
 package com.vesmile.webappla.dao.mybatis.client;
 
+import com.vesmile.webappla.dao.mybatis.example.UserRightExample;
 import com.vesmile.webappla.model.UserRight;
-import com.vesmile.webappla.model.UserRightExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface UserRightMapper {

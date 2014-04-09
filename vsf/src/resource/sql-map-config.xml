@@ -11,5 +11,5 @@
     maxRequests="128"
     lazyLoadingEnabled="false"/>
     
-    <sqlMap resource="sqlMaps/demo.xml" />
+    <sqlMap resource="sqlMaps/demo/demo.xml" />
 </sqlMapConfig>

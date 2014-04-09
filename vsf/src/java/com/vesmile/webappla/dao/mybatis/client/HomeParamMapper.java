@@ -1,8 +1,10 @@
 package com.vesmile.webappla.dao.mybatis.client;
 
+import com.vesmile.webappla.dao.mybatis.example.HomeParamExample;
 import com.vesmile.webappla.model.HomeParam;
-import com.vesmile.webappla.model.HomeParamExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface HomeParamMapper {

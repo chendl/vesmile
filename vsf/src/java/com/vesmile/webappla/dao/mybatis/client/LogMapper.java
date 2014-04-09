@@ -1,8 +1,10 @@
 package com.vesmile.webappla.dao.mybatis.client;
 
+import com.vesmile.webappla.dao.mybatis.example.LogExample;
 import com.vesmile.webappla.model.Log;
-import com.vesmile.webappla.model.LogExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface LogMapper {

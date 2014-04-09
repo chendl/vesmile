@@ -1,8 +1,10 @@
 package com.vesmile.webappla.dao.mybatis.client;
 
+import com.vesmile.webappla.dao.mybatis.example.ViewHistoryExample;
 import com.vesmile.webappla.model.ViewHistory;
-import com.vesmile.webappla.model.ViewHistoryExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface ViewHistoryMapper {

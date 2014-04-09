@@ -1,8 +1,10 @@
 package com.vesmile.webappla.dao.mybatis.client;
 
+import com.vesmile.webappla.dao.mybatis.example.PropertyExample;
 import com.vesmile.webappla.model.Property;
-import com.vesmile.webappla.model.PropertyExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface PropertyMapper {

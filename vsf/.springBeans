@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beansProjectDescription>
 	<version>1</version>
-	<pluginVersion><![CDATA[2.7.1.me201110252317]]></pluginVersion>
+	<pluginVersion><![CDATA[3.3.0.me201310081624]]></pluginVersion>
 	<configSuffixes>
 		<configSuffix><![CDATA[xml]]></configSuffix>
 	</configSuffixes>
@@ -12,8 +12,8 @@
 		<config>src/resource/daoContext.xml</config>
 		<config>src/resource/databaseContext.xml</config>
 		<config>src/resource/serverContext.xml</config>
+		<config>src/resource/applicationContext.xml</config>
 	</configs>
 	<configSets>
 	</configSets>
-	<springVersion>1.2</springVersion>
 </beansProjectDescription>

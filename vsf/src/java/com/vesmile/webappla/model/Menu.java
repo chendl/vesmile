@@ -1,6 +1,9 @@
 package com.vesmile.webappla.model;
 
 public class Menu {
+	public static final Integer MENU_TYPE_NAVIGATION = new Integer(1);
+	public static final Integer MENU_TYPE_MENU=new Integer(2);
+	
     private Integer id;
 
     private String code;

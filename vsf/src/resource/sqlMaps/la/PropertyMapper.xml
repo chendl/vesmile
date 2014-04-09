@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.vesmile.webappla.dao.mybatis.client.PropertyMapper" >
+  <resultMap id="BaseResultMap" type="com.vesmile.webappla.model.Property" >
+    <id column="lap_id" property="id" jdbcType="INTEGER" />
+    <result column="lap_code" property="code" jdbcType="VARCHAR" />
+    <result column="lap_name" property="name" jdbcType="VARCHAR" />
+    <result column="lap_x" property="x" jdbcType="VARCHAR" />
+    <result column="lap_y" property="y" jdbcType="VARCHAR" />
+    <result column="lap_year" property="year" jdbcType="VARCHAR" />
+    <result column="lap_housetype" property="housetype" jdbcType="VARCHAR" />
+    <result column="lap_buildtype" property="buildtype" jdbcType="VARCHAR" />
+    <result column="lap_volume_rate" property="volumeRate" jdbcType="DECIMAL" />
+    <result column="lap_greening_rate" property="greeningRate" jdbcType="DECIMAL" />
+    <result column="lap_building_num" property="buildingNum" jdbcType="INTEGER" />
+    <result column="lap_home_num" property="homeNum" jdbcType="INTEGER" />
+    <result column="lap_prop_comp" property="propComp" jdbcType="VARCHAR" />
+    <result column="lap_build_comp" property="buildComp" jdbcType="VARCHAR" />
+    <result column="lap_area" property="area" jdbcType="INTEGER" />
+    <result column="lap_prop_price" property="propPrice" jdbcType="VARCHAR" />
+    <result column="lap_sales_price" property="salesPrice" jdbcType="VARCHAR" />
+    <result column="lap_rent_price" property="rentPrice" jdbcType="VARCHAR" />
+    <result column="lap_harea" property="harea" jdbcType="VARCHAR" />
+    <result column="lap_address" property="address" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.vesmile.webappla.model.Property" extends="BaseResultMap" >
+    <result column="lap_desc" property="desc" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    lap_id, lap_code, lap_name, lap_x, lap_y, lap_year, lap_housetype, lap_buildtype, 
+    lap_volume_rate, lap_greening_rate, lap_building_num, lap_home_num, lap_prop_comp, 
+    lap_build_comp, lap_area, lap_prop_price, lap_sales_price, lap_rent_price, lap_harea, 
+    lap_address
+  </sql>
+  <sql id="Blob_Column_List" >
+    lap_desc
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.vesmile.webappla.dao.mybatis.example.PropertyExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from LA_Property
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.vesmile.webappla.dao.mybatis.example.PropertyExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from LA_Property
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from LA_Property
+    where lap_id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from LA_Property
+    where lap_id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.vesmile.webappla.dao.mybatis.example.PropertyExample" >
+    delete from LA_Property
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.vesmile.webappla.model.Property" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into LA_Property (lap_code, lap_name, lap_x, 
+      lap_y, lap_year, lap_housetype, 
+      lap_buildtype, lap_volume_rate, lap_greening_rate, 
+      lap_building_num, lap_home_num, lap_prop_comp, 
+      lap_build_comp, lap_area, lap_prop_price, 
+      lap_sales_price, lap_rent_price, lap_harea, 
+      lap_address, lap_desc)
+    values (#{code,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{x,jdbcType=VARCHAR}, 
+      #{y,jdbcType=VARCHAR}, #{year,jdbcType=VARCHAR}, #{housetype,jdbcType=VARCHAR}, 
+      #{buildtype,jdbcType=VARCHAR}, #{volumeRate,jdbcType=DECIMAL}, #{greeningRate,jdbcType=DECIMAL}, 
+      #{buildingNum,jdbcType=INTEGER}, #{homeNum,jdbcType=INTEGER}, #{propComp,jdbcType=VARCHAR}, 
+      #{buildComp,jdbcType=VARCHAR}, #{area,jdbcType=INTEGER}, #{propPrice,jdbcType=VARCHAR}, 
+      #{salesPrice,jdbcType=VARCHAR}, #{rentPrice,jdbcType=VARCHAR}, #{harea,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{desc,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.vesmile.webappla.model.Property" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into LA_Property
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="code != null" >
+        lap_code,
+      </if>
+      <if test="name != null" >
+        lap_name,
+      </if>
+      <if test="x != null" >
+        lap_x,
+      </if>
+      <if test="y != null" >
+        lap_y,
+      </if>
+      <if test="year != null" >
+        lap_year,
+      </if>
+      <if test="housetype != null" >
+        lap_housetype,
+      </if>
+      <if test="buildtype != null" >
+        lap_buildtype,
+      </if>
+      <if test="volumeRate != null" >
+        lap_volume_rate,
+      </if>
+      <if test="greeningRate != null" >
+        lap_greening_rate,
+      </if>
+      <if test="buildingNum != null" >
+        lap_building_num,
+      </if>
+      <if test="homeNum != null" >
+        lap_home_num,
+      </if>
+      <if test="propComp != null" >
+        lap_prop_comp,
+      </if>
+      <if test="buildComp != null" >
+        lap_build_comp,
+      </if>
+      <if test="area != null" >
+        lap_area,
+      </if>
+      <if test="propPrice != null" >
+        lap_prop_price,
+      </if>
+      <if test="salesPrice != null" >
+        lap_sales_price,
+      </if>
+      <if test="rentPrice != null" >
+        lap_rent_price,
+      </if>
+      <if test="harea != null" >
+        lap_harea,
+      </if>
+      <if test="address != null" >
+        lap_address,
+      </if>
+      <if test="desc != null" >
+        lap_desc,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="x != null" >
+        #{x,jdbcType=VARCHAR},
+      </if>
+      <if test="y != null" >
+        #{y,jdbcType=VARCHAR},
+      </if>
+      <if test="year != null" >
+        #{year,jdbcType=VARCHAR},
+      </if>
+      <if test="housetype != null" >
+        #{housetype,jdbcType=VARCHAR},
+      </if>
+      <if test="buildtype != null" >
+        #{buildtype,jdbcType=VARCHAR},
+      </if>
+      <if test="volumeRate != null" >
+        #{volumeRate,jdbcType=DECIMAL},
+      </if>
+      <if test="greeningRate != null" >
+        #{greeningRate,jdbcType=DECIMAL},
+      </if>
+      <if test="buildingNum != null" >
+        #{buildingNum,jdbcType=INTEGER},
+      </if>
+      <if test="homeNum != null" >
+        #{homeNum,jdbcType=INTEGER},
+      </if>
+      <if test="propComp != null" >
+        #{propComp,jdbcType=VARCHAR},
+      </if>
+      <if test="buildComp != null" >
+        #{buildComp,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null" >
+        #{area,jdbcType=INTEGER},
+      </if>
+      <if test="propPrice != null" >
+        #{propPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="salesPrice != null" >
+        #{salesPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="rentPrice != null" >
+        #{rentPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="harea != null" >
+        #{harea,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="desc != null" >
+        #{desc,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.vesmile.webappla.dao.mybatis.example.PropertyExample" resultType="java.lang.Integer" >
+    select count(*) from LA_Property
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update LA_Property
+    <set >
+      <if test="record.id != null" >
+        lap_id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.code != null" >
+        lap_code = #{record.code,jdbcType=VARCHAR},
+      </if>
+      <if test="record.name != null" >
+        lap_name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.x != null" >
+        lap_x = #{record.x,jdbcType=VARCHAR},
+      </if>
+      <if test="record.y != null" >
+        lap_y = #{record.y,jdbcType=VARCHAR},
+      </if>
+      <if test="record.year != null" >
+        lap_year = #{record.year,jdbcType=VARCHAR},
+      </if>
+      <if test="record.housetype != null" >
+        lap_housetype = #{record.housetype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.buildtype != null" >
+        lap_buildtype = #{record.buildtype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.volumeRate != null" >
+        lap_volume_rate = #{record.volumeRate,jdbcType=DECIMAL},
+      </if>
+      <if test="record.greeningRate != null" >
+        lap_greening_rate = #{record.greeningRate,jdbcType=DECIMAL},
+      </if>
+      <if test="record.buildingNum != null" >
+        lap_building_num = #{record.buildingNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.homeNum != null" >
+        lap_home_num = #{record.homeNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.propComp != null" >
+        lap_prop_comp = #{record.propComp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.buildComp != null" >
+        lap_build_comp = #{record.buildComp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.area != null" >
+        lap_area = #{record.area,jdbcType=INTEGER},
+      </if>
+      <if test="record.propPrice != null" >
+        lap_prop_price = #{record.propPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="record.salesPrice != null" >
+        lap_sales_price = #{record.salesPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rentPrice != null" >
+        lap_rent_price = #{record.rentPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="record.harea != null" >
+        lap_harea = #{record.harea,jdbcType=VARCHAR},
+      </if>
+      <if test="record.address != null" >
+        lap_address = #{record.address,jdbcType=VARCHAR},
+      </if>
+      <if test="record.desc != null" >
+        lap_desc = #{record.desc,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update LA_Property
+    set lap_id = #{record.id,jdbcType=INTEGER},
+      lap_code = #{record.code,jdbcType=VARCHAR},
+      lap_name = #{record.name,jdbcType=VARCHAR},
+      lap_x = #{record.x,jdbcType=VARCHAR},
+      lap_y = #{record.y,jdbcType=VARCHAR},
+      lap_year = #{record.year,jdbcType=VARCHAR},
+      lap_housetype = #{record.housetype,jdbcType=VARCHAR},
+      lap_buildtype = #{record.buildtype,jdbcType=VARCHAR},
+      lap_volume_rate = #{record.volumeRate,jdbcType=DECIMAL},
+      lap_greening_rate = #{record.greeningRate,jdbcType=DECIMAL},
+      lap_building_num = #{record.buildingNum,jdbcType=INTEGER},
+      lap_home_num = #{record.homeNum,jdbcType=INTEGER},
+      lap_prop_comp = #{record.propComp,jdbcType=VARCHAR},
+      lap_build_comp = #{record.buildComp,jdbcType=VARCHAR},
+      lap_area = #{record.area,jdbcType=INTEGER},
+      lap_prop_price = #{record.propPrice,jdbcType=VARCHAR},
+      lap_sales_price = #{record.salesPrice,jdbcType=VARCHAR},
+      lap_rent_price = #{record.rentPrice,jdbcType=VARCHAR},
+      lap_harea = #{record.harea,jdbcType=VARCHAR},
+      lap_address = #{record.address,jdbcType=VARCHAR},
+      lap_desc = #{record.desc,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update LA_Property
+    set lap_id = #{record.id,jdbcType=INTEGER},
+      lap_code = #{record.code,jdbcType=VARCHAR},
+      lap_name = #{record.name,jdbcType=VARCHAR},
+      lap_x = #{record.x,jdbcType=VARCHAR},
+      lap_y = #{record.y,jdbcType=VARCHAR},
+      lap_year = #{record.year,jdbcType=VARCHAR},
+      lap_housetype = #{record.housetype,jdbcType=VARCHAR},
+      lap_buildtype = #{record.buildtype,jdbcType=VARCHAR},
+      lap_volume_rate = #{record.volumeRate,jdbcType=DECIMAL},
+      lap_greening_rate = #{record.greeningRate,jdbcType=DECIMAL},
+      lap_building_num = #{record.buildingNum,jdbcType=INTEGER},
+      lap_home_num = #{record.homeNum,jdbcType=INTEGER},
+      lap_prop_comp = #{record.propComp,jdbcType=VARCHAR},
+      lap_build_comp = #{record.buildComp,jdbcType=VARCHAR},
+      lap_area = #{record.area,jdbcType=INTEGER},
+      lap_prop_price = #{record.propPrice,jdbcType=VARCHAR},
+      lap_sales_price = #{record.salesPrice,jdbcType=VARCHAR},
+      lap_rent_price = #{record.rentPrice,jdbcType=VARCHAR},
+      lap_harea = #{record.harea,jdbcType=VARCHAR},
+      lap_address = #{record.address,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.vesmile.webappla.model.Property" >
+    update LA_Property
+    <set >
+      <if test="code != null" >
+        lap_code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        lap_name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="x != null" >
+        lap_x = #{x,jdbcType=VARCHAR},
+      </if>
+      <if test="y != null" >
+        lap_y = #{y,jdbcType=VARCHAR},
+      </if>
+      <if test="year != null" >
+        lap_year = #{year,jdbcType=VARCHAR},
+      </if>
+      <if test="housetype != null" >
+        lap_housetype = #{housetype,jdbcType=VARCHAR},
+      </if>
+      <if test="buildtype != null" >
+        lap_buildtype = #{buildtype,jdbcType=VARCHAR},
+      </if>
+      <if test="volumeRate != null" >
+        lap_volume_rate = #{volumeRate,jdbcType=DECIMAL},
+      </if>
+      <if test="greeningRate != null" >
+        lap_greening_rate = #{greeningRate,jdbcType=DECIMAL},
+      </if>
+      <if test="buildingNum != null" >
+        lap_building_num = #{buildingNum,jdbcType=INTEGER},
+      </if>
+      <if test="homeNum != null" >
+        lap_home_num = #{homeNum,jdbcType=INTEGER},
+      </if>
+      <if test="propComp != null" >
+        lap_prop_comp = #{propComp,jdbcType=VARCHAR},
+      </if>
+      <if test="buildComp != null" >
+        lap_build_comp = #{buildComp,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null" >
+        lap_area = #{area,jdbcType=INTEGER},
+      </if>
+      <if test="propPrice != null" >
+        lap_prop_price = #{propPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="salesPrice != null" >
+        lap_sales_price = #{salesPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="rentPrice != null" >
+        lap_rent_price = #{rentPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="harea != null" >
+        lap_harea = #{harea,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        lap_address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="desc != null" >
+        lap_desc = #{desc,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where lap_id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.vesmile.webappla.model.Property" >
+    update LA_Property
+    set lap_code = #{code,jdbcType=VARCHAR},
+      lap_name = #{name,jdbcType=VARCHAR},
+      lap_x = #{x,jdbcType=VARCHAR},
+      lap_y = #{y,jdbcType=VARCHAR},
+      lap_year = #{year,jdbcType=VARCHAR},
+      lap_housetype = #{housetype,jdbcType=VARCHAR},
+      lap_buildtype = #{buildtype,jdbcType=VARCHAR},
+      lap_volume_rate = #{volumeRate,jdbcType=DECIMAL},
+      lap_greening_rate = #{greeningRate,jdbcType=DECIMAL},
+      lap_building_num = #{buildingNum,jdbcType=INTEGER},
+      lap_home_num = #{homeNum,jdbcType=INTEGER},
+      lap_prop_comp = #{propComp,jdbcType=VARCHAR},
+      lap_build_comp = #{buildComp,jdbcType=VARCHAR},
+      lap_area = #{area,jdbcType=INTEGER},
+      lap_prop_price = #{propPrice,jdbcType=VARCHAR},
+      lap_sales_price = #{salesPrice,jdbcType=VARCHAR},
+      lap_rent_price = #{rentPrice,jdbcType=VARCHAR},
+      lap_harea = #{harea,jdbcType=VARCHAR},
+      lap_address = #{address,jdbcType=VARCHAR},
+      lap_desc = #{desc,jdbcType=LONGVARCHAR}
+    where lap_id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.vesmile.webappla.model.Property" >
+    update LA_Property
+    set lap_code = #{code,jdbcType=VARCHAR},
+      lap_name = #{name,jdbcType=VARCHAR},
+      lap_x = #{x,jdbcType=VARCHAR},
+      lap_y = #{y,jdbcType=VARCHAR},
+      lap_year = #{year,jdbcType=VARCHAR},
+      lap_housetype = #{housetype,jdbcType=VARCHAR},
+      lap_buildtype = #{buildtype,jdbcType=VARCHAR},
+      lap_volume_rate = #{volumeRate,jdbcType=DECIMAL},
+      lap_greening_rate = #{greeningRate,jdbcType=DECIMAL},
+      lap_building_num = #{buildingNum,jdbcType=INTEGER},
+      lap_home_num = #{homeNum,jdbcType=INTEGER},
+      lap_prop_comp = #{propComp,jdbcType=VARCHAR},
+      lap_build_comp = #{buildComp,jdbcType=VARCHAR},
+      lap_area = #{area,jdbcType=INTEGER},
+      lap_prop_price = #{propPrice,jdbcType=VARCHAR},
+      lap_sales_price = #{salesPrice,jdbcType=VARCHAR},
+      lap_rent_price = #{rentPrice,jdbcType=VARCHAR},
+      lap_harea = #{harea,jdbcType=VARCHAR},
+      lap_address = #{address,jdbcType=VARCHAR}
+    where lap_id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

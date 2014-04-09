@@ -1,8 +1,10 @@
 package com.vesmile.webappla.dao.mybatis.client;
 
+import com.vesmile.webappla.dao.mybatis.example.SysParamExample;
 import com.vesmile.webappla.model.SysParam;
-import com.vesmile.webappla.model.SysParamExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface SysParamMapper {

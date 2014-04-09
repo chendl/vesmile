@@ -1,8 +1,10 @@
 package com.vesmile.webappla.dao.mybatis.client;
 
+import com.vesmile.webappla.dao.mybatis.example.UserPrivExample;
 import com.vesmile.webappla.model.UserPriv;
-import com.vesmile.webappla.model.UserPrivExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface UserPrivMapper {

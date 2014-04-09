@@ -1,8 +1,10 @@
 package com.vesmile.webappla.dao.mybatis.client;
 
+import com.vesmile.webappla.dao.mybatis.example.OrderExample;
 import com.vesmile.webappla.model.Order;
-import com.vesmile.webappla.model.OrderExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface OrderMapper {

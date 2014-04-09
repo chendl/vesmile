@@ -2,6 +2,11 @@
 <classpath>
 	<classpathentry kind="src" path="src/java"/>
 	<classpathentry kind="src" path="src/resource"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="lib" path="src/lib/main/activation.jar">
 		<attributes>
@@ -378,76 +383,6 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="src/lib/main/spring-agent.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="src/lib/main/spring-aop.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="src/lib/main/spring-aspects.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="src/lib/main/spring-beans.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="src/lib/main/spring-context.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="src/lib/main/spring-core.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="src/lib/main/spring-jdbc.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="src/lib/main/spring-orm.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="src/lib/main/spring-tomcat-weaver.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="src/lib/main/spring-tx.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="src/lib/main/spring-web.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="src/lib/main/spring-webmvc-portlet.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="src/lib/main/spring-webmvc-struts.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="src/lib/main/spring-webmvc.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="lib" path="src/lib/main/sqljdbc.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
@@ -493,16 +428,32 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6">
-		<attributes>
-			<attribute name="owner.project.facets" value="java"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="lib" path="src/lib/include/mysql-connector-java-5.1.11-bin.jar"/>
 	<classpathentry kind="lib" path="src/lib/main/mybatis-3.2.6.jar"/>
 	<classpathentry kind="lib" path="src/lib/include/javax.servlet.jar"/>
 	<classpathentry kind="lib" path="src/lib/include/javax.servlet.jsp.jar"/>
 	<classpathentry kind="lib" path="src/lib/include/junit.jar"/>
 	<classpathentry kind="lib" path="src/lib/main/mybatis-spring-1.2.2.jar"/>
+	<classpathentry kind="lib" path="src/lib/main/commons-codec-1.9.jar"/>
+	<classpathentry kind="con" path="com.genuitec.runtime.library/com.genuitec.jstl_1.2.1">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="WEB-INF/lib"/>
+			<attribute name="owner.project.facets" value="jst.web.jstl"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="src/lib/main/org.springframework.asm-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="src/lib/main/org.springframework.beans-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="src/lib/main/org.springframework.context-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="src/lib/main/org.springframework.core-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="src/lib/main/org.springframework.expression-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="src/lib/main/org.springframework.jdbc-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="src/lib/main/org.springframework.orm-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="src/lib/main/org.springframework.oxm-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="src/lib/main/org.springframework.transaction-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="src/lib/main/org.springframework.web-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="src/lib/main/org.springframework.web.portlet-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="src/lib/main/org.springframework.web.servlet-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="src/lib/main/org.springframework.web.struts-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="src/lib/main/org.springframework.aop_3.0.5.RELEASE.jar"/>
 	<classpathentry kind="output" path="src/web/WEB-INF/classes"/>
 </classpath>
